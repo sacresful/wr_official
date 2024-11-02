@@ -12,14 +12,15 @@ local F35VehicleBlueprint = {
 
 function F35:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
     print("***** Found F35 Blueprint!!!") 
-    local s_PropertyConnections = p_VehicleBlueprint.propertyConnections
-    local s_EngineComponentData = s_PropertyConnections[99].source :: EngineComponentData
-    local s_JetEngineConfigData = s_EngineComponentData.config :: JetEngineConfigData
-    local s_boost = s_JetEngineConfigData.boost
-    s_JetEngineConfigData.rpmMax = 99999
-    s_JetEngineConfigData.enginePowerMultiplier = 5
-    s_boost.accelerationScale = 100
-    s_boost.forwardStrength = 30
+    local s_VehicleEntityData = p_VehicleBlueprint.object :: VehicleEntityData
+    local s_ChassisComponentData = s_VehicleEntityData.components[0] :: ChassisComponentData
+    local s_GearboxConfig = s_ChassisComponentData.gearboxConfig
+    local s_ForwardGearSpeeds = s_GearboxConfig.forwardGearSpeeds
+    s_ForwardGearSpeeds[0] = 90
+    s_ForwardGearSpeeds[1] = 140
+    s_ForwardGearSpeeds[2] = 180
+    s_ForwardGearSpeeds[3] = 220
+    s_ForwardGearSpeeds[4] = 260
 end
 
 partitions.onInstanceLoad(

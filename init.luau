@@ -8,7 +8,7 @@ require("Vehicles/Cannon")
 require("Vehicles/JDAM2")
 require("Vehicles/TV")
 require("Vehicles/M1A2")
-require("Vehicles/F35")
+require("Vehicles/F35TEST")
 require("Maps/mp_journey")
 
 return nil
