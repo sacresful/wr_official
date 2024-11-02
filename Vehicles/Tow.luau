@@ -23,7 +23,7 @@ function Tow:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringDa
     s_Shot.initialSpeed.z = 1000
     s_fireLogic.rateOfFire = 1000
     s_fireLogic.holdAndRelease.maxHoldTime = 30
-    
+    s_Ammo.traceFrequency = 0.1
 end
 
 partitions.onInstanceLoad(
