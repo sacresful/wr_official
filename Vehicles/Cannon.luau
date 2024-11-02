@@ -19,8 +19,8 @@ function Cannon:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFirin
     s_FireLogic.rateOfFire = 1000
     s_Ammo.numberOfMagazines = 10
     s_Ammo.magazineCapacity = 60
-    s_Shot.numberOfBulletsPerShot = 3
-    s_Shot.numberOfBulletsPerShell = 3
+    s_Shot.numberOfBulletsPerShot = 1
+    s_Shot.numberOfBulletsPerShell = 1
 end
 
 partitions.onInstanceLoad(
