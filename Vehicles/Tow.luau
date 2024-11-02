@@ -13,6 +13,7 @@ function Tow:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringDa
     print("***** Found Tow Blueprint!!!")
     local s_WeaponFiringData = p_WeaponFiringDataAsset.data :: WeaponFiringData
     local s_FiringFunctionData = s_WeaponFiringData.primaryFire
+    s_fireLogic = s_FiringFunctionData.fireLogic
     local s_Ammo = s_FiringFunctionData.ammo
     local s_Shot = s_FiringFunctionData.shot
     local s_ProjectileData = s_Shot.projectileData
@@ -20,6 +21,9 @@ function Tow:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringDa
     s_Ammo.magazineCapacity = 8
     s_Ammo.numberOfMagazines = 8
     s_Shot.initialSpeed.z = 1000
+    s_fireLogic.rateOfFire = 1000
+    s_fireLogic.holdAndRelease.maxHoldTime = 30
+    
 end
 
 partitions.onInstanceLoad(
