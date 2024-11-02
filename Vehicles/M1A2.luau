@@ -5,26 +5,23 @@ local M1A2 = {}
 
 print("Hello World!")
 
-local M1A2ProjectileBlueprint = {
-  partitionGuid = Guid("3967F092-5858-42F6-90A3-9A800B7DAB1B"),
-  instanceGuid = Guid("D1406A5C-D38B-4078-B9AE-AC88976AC565")
+local M1A2VehicleBlueprint = {
+  partitionGuid = Guid("B069BA89-EECF-11DD-8117-9421284A74E5"),
+  instanceGuid = Guid("B06A08AB-EECF-11DD-8117-9421284A74E5")
 }
 
-function M1A2:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringDataAsset)
+function M1A2:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
     print("***** Found M1A2 Blueprint!!!") 
-    local s_WeaponFiringData = p_WeaponFiringDataAsset.data :: WeaponFiringData
-    local s_FiringFunctionData = s_WeaponFiringData.primaryFire
-    local s_Shot = s_FiringFunctionData.shot
-    local s_BulletEntityData = s_Shot.projectileData
-    s_FiringFunctionData.fireLogic.rateOfFire = 2000
+    local s_VehicleEntityData = p_VehicleBlueprint.object :: VehicleEntityData
+    local s_VehicleComponentData = s_VehicleEntityData.components[0]
     
 end
 
 partitions.onInstanceLoad(
-    M1A2ProjectileBlueprint.partitionGuid,
-    M1A2ProjectileBlueprint.instanceGuid,
+    M1A2VehicleBlueprint.partitionGuid,
+    M1A2VehicleBlueprint.instanceGuid,
     M1A2,
-    M1A2.OnWeaponFiringDataAssetLoad
+    M1A2.OnVehicleBlueprintLoad
 )
 
 return nil
