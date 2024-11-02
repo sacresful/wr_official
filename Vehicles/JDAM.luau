@@ -15,6 +15,7 @@ function JDAM:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringD
     local s_WeaponFiringData = p_WeaponFiringDataAsset.data :: WeaponFiringData
     local s_FiringFunctionData = s_WeaponFiringData.primaryFire
     local s_Ammo = s_FiringFunctionData.ammo
+    s_FiringFunctionData.fireLogic.rateOfFire = 2000
     s_Ammo.magazineCapacity = 10
 end
 
