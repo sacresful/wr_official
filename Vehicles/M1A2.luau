@@ -14,7 +14,6 @@ function M1A2:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
     print("***** Found M1A2 Blueprint!!!") 
     local s_VehicleEntityData = p_VehicleBlueprint.object :: VehicleEntityData
     local s_VehicleComponentData = s_VehicleEntityData.components[0]
-
 end
 
 partitions.onInstanceLoad(

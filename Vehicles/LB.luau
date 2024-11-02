@@ -22,13 +22,13 @@ function LB:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
     local s_PropellerEngineConfigData = s_EngineComponentData.config :: PropellerEngineConfigData
     local s_Boost = s_PropellerEngineConfigData.boost :: Boost
     local s_RotorParameters = s_PropellerEngineConfigData.rotorConfig :: RotorParameters
-    s_Boost.forwardStrength = 30.0
-    s_Boost.reverseStrength = 50.0
+   -- s_Boost.forwardStrength = 30.0
+   -- s_Boost.reverseStrength = 50.0
     s_Boost.accelerationScale = 5.0
-    s_PropellerEngineConfigData.rpmMax = 10000.0
-    s_PropellerEngineConfigData.enginePowerMultiplier = 100.0
-    s_PropellerEngineConfigData.internalAccelerationFactor = 20.0
-    s_RotorParameters.collectiveThrottleInputScale = 30
+   -- s_PropellerEngineConfigData.rpmMax = 10000.0
+   -- s_PropellerEngineConfigData.enginePowerMultiplier = 100.0
+   -- s_PropellerEngineConfigData.internalAccelerationFactor = 20.0
+    --s_RotorParameters.collectiveThrottleInputScale = 30
 end
 
 partitions.onInstanceLoad(

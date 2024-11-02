@@ -16,7 +16,6 @@ function Zuni:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringD
     local s_Ammo = s_FiringFunctionData.ammo
     local s_Shot = s_FiringFunctionData.shot
     s_Ammo.numberOfMagazines = 8
-    s_Shot.initialSpeed.z = 2000
 end
 
 partitions.onInstanceLoad(
