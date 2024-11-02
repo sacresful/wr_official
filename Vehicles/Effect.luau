@@ -15,8 +15,8 @@ function Effect:OnEffectBlueprintLoad()
 end
 
 partitions.onInstanceLoad(
-    EffectProjectileBlueprint.partitionGuid,
-    EffectProjectileBlueprint.instanceGuid,
+    EffectBlueprint.partitionGuid,
+    EffectBlueprint.instanceGuid,
     Effect,
     Effect.OnEffectBlueprintLoad
 )

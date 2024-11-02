@@ -18,7 +18,8 @@ function TV:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringDat
     local s_Ammo = s_FiringFunctionData.ammo
     s_Ammo.magazineCapacity = 4
     s_Ammo.numberOfMagazines = 4
-    s_Shot.initialSpeed.y = 900
+    s_Shot.initialSpeed.x = 1500
+    s_Shot.initialSpeed.z = 1500
 end
 
 partitions.onInstanceLoad(
