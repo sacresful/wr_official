@@ -13,7 +13,7 @@ local JDAM2ProjectileBlueprint = {
 function JDAM2:OnVehicleBlueprintLoad(p_ProjectileBlueprint: ProjectileBlueprint)
     print("***** Found JDAM2 Blueprint!!!")ProjectileBlueprint
     local s_MissileEntityData = p_ProjectileBlueprint.object :: MissileEntityData
-    s_VeniceExplosionEntityData = s_MissileEntityData.explosion
+    local s_VeniceExplosionEntityData = s_MissileEntityData.explosion
     s_VeniceExplosionEntityData.blastRadius = 1000
 end
 
@@ -21,7 +21,7 @@ partitions.onInstanceLoad(
     JDAM2ProjectileBlueprint.partitionGuid,
     JDAM2ProjectileBlueprint.instanceGuid,
     JDAM2,
-    JDAM2.OnWeaponFiringDataAssetLoad
+    JDAM2.OnVehicleBlueprintLoad
 )
 
 return nil
