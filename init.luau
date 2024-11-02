@@ -5,5 +5,6 @@ require("Vehicles/JDAM")
 require("Vehicles/Tow")
 require("Vehicles/Zuni")
 require("Vehicles/Cannon")
+require("Vehicles/JDAM2")
 
 return nil
