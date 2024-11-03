@@ -17,13 +17,9 @@ function Tow:OnWeaponFiringDataAssetLoad(p_WeaponFiringDataAsset: WeaponFiringDa
     local s_Ammo = s_FiringFunctionData.ammo
     local s_Shot = s_FiringFunctionData.shot
     local s_ProjectileData = s_Shot.projectileData
-    s_ProjectileData.timeToLive = 50
     s_Ammo.magazineCapacity = 8
     s_Ammo.numberOfMagazines = 8
-    s_Shot.initialSpeed.z = 1000
-    s_fireLogic.rateOfFire = 1000
-    s_fireLogic.holdAndRelease.maxHoldTime = 30
-    s_Ammo.traceFrequency = 5
+    s_Shot.initialSpeed.z = 350
 end
 
 partitions.onInstanceLoad(

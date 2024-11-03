@@ -13,7 +13,8 @@ local dawnbreakerLevelData = {
 function dawnbreaker:OndawnbreakerLevelDataLoad(p_dawnbreakerLevelData: SubWorldData)
     print("***** Found dawnbreakerLevelData Blueprint!!!") 
     local s_linkConnections = p_dawnbreakerLevelData.linkConnections
-    local s_linkConnection = s_linkConnections[24].target :: DataContainer
+    local s_linkConnection = s_linkConnections[1].source
+    local s_ReferenceObjectData = s_linkConnection.
 end
 
 partitions.onInstanceLoad(
