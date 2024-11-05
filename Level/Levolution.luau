@@ -17,10 +17,6 @@ function Levolution:OnVisualEnvironmentBlueprintLoad(p_VisualEnvironmentBlueprin
   --  local s_FogComponentData = s_VisualEnvironmentEntityComponents[2] :: FogComponentData
     local s_SkyComponentData = s_VisualEnvironmentEntityComponents[3] :: SkyComponentData
     s_SkyComponentData.enable = false
-   -- s_SkyComponentData.cloudLayer1Altitude = 1000
-   -- s_FogComponentData.enable = false
-   -- s_FogComponentData.heightFogEnable = false
-    -- s_FogComponentData.heightFogAltitude = 9999
 end
 
 partitions.onInstanceLoad(

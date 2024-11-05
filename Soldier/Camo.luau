@@ -12,14 +12,10 @@ local camo = {
 
 function camo:OncamoLoad(p_camo: CamoUnlockAsset)
     print("***** Found camo Blueprint!!!") 
-    local s_color1 = p_camo.color1 
-    local s_color2 = p_camo.color2
-    local s_color3 = p_camo.color3
-    local s_color4 = p_camo.color4
-    s_color1 = Vec4[1.0]
-    s_color2 = Vec4[1.0]
-    s_color3 = Vec4[1.0]
-    s_color4 = Vec4[1.0]
+    p_camo.color1.x = 1
+    p_camo.color2.y = 0
+    p_camo.color3.z = 0
+    p_camo.color4.w = 1
 end
 
 partitions.onInstanceLoad(

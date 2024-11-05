@@ -3,7 +3,7 @@ name = "wr_official"
 version = "0.1.0"
 author_ids = ["yourName"]
 description = "yourDescription"
-repository = "https://anyTextButShouldBeLinkToYourRepository"
+repository = "https://github.com/sacresful/wr_official"
 tags = ["official", "wr"]
 
 [dependencies]
