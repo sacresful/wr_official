@@ -25,8 +25,8 @@ function Mi28:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
 
     local s_Mi28VehicleEntityData = p_VehicleBlueprint.object :: VehicleEntityData
     local s_Mi28VehicleComponentData = s_Mi28VehicleEntityData.components[1] :: VehicleComponentData
-    s_Mi28VehicleComponentData.components[9] = s_AH1ZEngineComponentData
-    s_Mi28VehicleComponentData.components[10] = s_AH1ZEngineComponentData2
+    s_Mi28VehicleComponentData.components[9] = s_AH1ZEngineComponentData:clone()
+    s_Mi28VehicleComponentData.components[10] = s_AH1ZEngineComponentData2:clone()
 end
 
 partitions.onInstanceLoad(
