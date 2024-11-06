@@ -2,7 +2,6 @@
 local partitions = require("./partitions")
 
 local siege = {}
-local jet = {}
 
 print("Mod initalized")
 
