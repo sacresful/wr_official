@@ -2,7 +2,7 @@
 local partitions = require("./partitions")
 
 local dawnbreaker = {}
-local dawnbreakerVehicles = {}
+local dawnbreakerVehicle = {}
 
 print("Mod initalized")
 
@@ -16,6 +16,7 @@ function dawnbreaker:OndawnbreakerLevelDataLoad(p_dawnbreakerLevelData: LevelDat
     print("***** Found dawnbreakerLevelData Blueprint!!!") 
     local s_LevelDescription = p_dawnbreakerLevelData.levelDescription :: LevelDescription
     local s_LevelDescriptionComponent = s_LevelDescription.components[4] :: VeniceGameplayLevelDescriptionComponent
+    p_dawnbreakerLevelData.maxVehicleHeight = 500
     s_LevelDescriptionComponent.defaultTeam1Faction = 2
     s_LevelDescriptionComponent.defaultTeam2Faction = 0
     s_LevelDescriptionComponent.defaultTeam3Faction = 2
@@ -27,7 +28,7 @@ local dawnbreakerVehicles= {
   instanceGuid = Guid("0F347E52-FBC3-431C-BB46-122104680C12")
 }
 
-function dawnbreakerVehicles:OndawnbreakerVehiclesDataLoad(p_dawnbreakerVehicles: WorldPartData)
+function dawnbreakerVehicle:OndawnbreakerVehiclesDataLoad(p_dawnbreakerVehicles: WorldPartData)
     print("***** Found dawnbreakerVehicles Blueprint!!!") 
     local s_ReferenceObjectData28 = p_dawnbreakerVehicles.objects[29] :: ReferenceObjectData
     local s_ReferenceObjectData29 = p_dawnbreakerVehicles.objects[30] :: ReferenceObjectData
@@ -45,7 +46,7 @@ partitions.onInstanceLoad(
     dawnbreakerVehicles.partitionGuid,
     dawnbreakerVehicles.instanceGuid,
     dawnbreakerVehicles,
-    dawnbreakerVehicles.OndawnbreakerVehiclesDataLoad
+    dawnbreakerVehicle.OndawnbreakerVehiclesDataLoad
 )
 
 return nil

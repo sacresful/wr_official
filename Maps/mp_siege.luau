@@ -11,20 +11,16 @@ local siegeWorldPartData = {
   instanceGuid = Guid("9C36A166-6E41-45D8-9F66-1480899DBEC6")
 }
 
-local jetSpatialPrefabBlueprint = {
+local jetSpatialPrefabBlueprintGuids = {
   partitionGuid = Guid("9DF7AED7-74E9-4EC6-B71E-AF11BD0FF302"),
   instanceGuid = Guid("2E2C354D-C53F-4A65-8691-1162024335A1")
 }
 
 function siege:OnsiegeLevelDataLoad(p_siegeWorldPartData: WorldPartData)
     print("***** Found siegeWorldPartData Blueprint!!!") 
+    local jetSpatialPrefabBlueprint= ResourceManager:findInstance(jetSpatialPrefabBlueprintGuids.partitionGuid, jetSpatialPrefabBlueprintGuids.instanceGuid)
     local s_ReferenceObjectData22 = p_siegeWorldPartData.objects[23] :: ReferenceObjectData
-    local s_VehicleBlueprint = s_ReferenceObjectData22.blueprint :: SpatialPrefabBlueprint
-    s_VehicleBlueprint = p_jetSpatialPrefabBlueprint
-end
-
-function jet:OnjetSpatialPrefabBlueprintLoad(p_jetSpatialPrefabBlueprint: SpatialPrefabBlueprint)
-    print("***** Found jetSpatialPrefabBlueprint Blueprint!!!") 
+    s_ReferenceObjectData22.blueprint = jetSpatialPrefabBlueprint:clone()
 end
 
 partitions.onInstanceLoad(
@@ -32,13 +28,6 @@ partitions.onInstanceLoad(
     siegeWorldPartData.instanceGuid,
     siege,
     siege.OnsiegeLevelDataLoad
-)
-
-partitions.onInstanceLoad(
-    jetSpatialPrefabBlueprint.partitionGuid,
-    jetSpatialPrefabBlueprint.instanceGuid,
-    jet,
-    jet.OnjetSpatialPrefabBlueprintLoad
 )
 
 return nil

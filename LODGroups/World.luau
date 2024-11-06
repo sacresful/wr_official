@@ -3,9 +3,9 @@ local partitions = require("./partitions")
 
 local World = {}
 
-print("Hello World!")
+print("Mod initialized")
 
-local World = {
+local WorldLod = {
   partitionGuid = Guid("64991A4A-4C5E-11DE-B1F5-FE435F0A1D8F"),
   instanceGuid = Guid("6F61313B-C996-C1CB-CE6F-34392F6CC1E1")
 }
@@ -21,8 +21,8 @@ function World:OnMeshLodGroupLoad(p_MeshLodGroup: MeshLodGroup)
 end
 
 partitions.onInstanceLoad(
-    World.partitionGuid,
-    World.instanceGuid,
+    WorldLod.partitionGuid,
+    WorldLod.instanceGuid,
     World,
     World.OnMeshLodGroupLoad
 )
