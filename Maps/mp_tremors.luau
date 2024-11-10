@@ -1,4 +1,5 @@
 --!strict
+-- change default factions, increase sky ceiling, remove the jets
 local partitions = require("./partitions")
 
 local dawnbreaker = {}

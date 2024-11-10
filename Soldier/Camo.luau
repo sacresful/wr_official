@@ -1,4 +1,5 @@
 --!strict
+-- make dice camo look have pink color
 local partitions = require("./partitions")
 
 local camo = {}

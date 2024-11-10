@@ -1,4 +1,6 @@
 --!strict
+-- name of the file says it
+-- trying to fix havoc
 local partitions = require("./partitions")
 
 local Mi28 = {}

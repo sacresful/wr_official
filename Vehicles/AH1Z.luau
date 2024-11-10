@@ -1,4 +1,5 @@
 --!strict
+-- apply z10 inertias for ah1z
 local partitions = require("./partitions")
 
 local AH1Z = {}

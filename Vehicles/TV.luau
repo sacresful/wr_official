@@ -1,4 +1,5 @@
 --!strict
+-- i will try to fix tvbug
 local partitions = require("./partitions")
 
 local TV = {}

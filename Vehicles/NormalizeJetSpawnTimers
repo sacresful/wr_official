@@ -1,0 +1,34 @@
+--!strict
+-- will be tested,
+-- jet spawning in the air dont change their spawn time when changing vehicle respawn rate, this will test how it works.
+local partitions = require("./partitions")
+
+local Jet = {}
+
+print("Mod initialized")
+
+local JetFighterSpatialPrefabBlueprint = {
+  partitionGuid = Guid("9DF7AED7-74E9-4EC6-B71E-AF11BD0FF302"),
+  instanceGuid = Guid("2E2C354D-C53F-4A65-8691-1162024335A1")
+}
+
+local JetFighterFlyingStartSpatialPrefabBlueprint = {
+    partitionGuid = Guid("232563FF-688D-4A1F-9F18-FB47CB1B69EE"),
+    instanceGuid = Guid("F6BD64A6-A95B-4B3B-8821-2784D9F3DF08")
+}
+
+function Jet:OnVehicleBlueprintLoad(p_SpatialPrefabBlueprint: SpatialPrefabBlueprint)
+    print("***** Found Jet Blueprint!!!")
+    local s_flyingstartblueprint = ResourceManager:findInstance(JetFighterFlyingStartSpatialPrefabBlueprint.partitionGuid, JetFighterFlyingStartSpatialPrefabBlueprint.instanceGuid)
+    local s_flyingstartobjects = s_flyingstartblueprint.objects
+    p_SpatialPrefabBlueprint.objects = s_flyingstartobjects:clone()
+end
+
+partitions.onInstanceLoad(
+    JetFighterSpatialPrefabBlueprint.partitionGuid, 
+    JetFighterSpatialPrefabBlueprint.instanceGuid, 
+    Jet,
+    Jet.OnVehicleBlueprintLoad
+)
+
+return nil
