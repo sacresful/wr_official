@@ -1,4 +1,5 @@
 --!strict
+-- remove sandstorm on oman - doesnt work yet.
 local partitions = require("./partitions")
 
 local Levolution = {}

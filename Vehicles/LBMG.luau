@@ -1,4 +1,5 @@
 --!strict
+-- changing minigun on scouts, doesnt work
 local partitions = require("./partitions")
 
 local Minigun = {}

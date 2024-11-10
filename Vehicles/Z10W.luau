@@ -1,4 +1,5 @@
 --!strict
+-- apply ah1z interias to z10
 local partitions = require("./partitions")
 
 local Z10W = {}

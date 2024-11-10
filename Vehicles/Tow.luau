@@ -1,3 +1,4 @@
+--!strict
 local partitions = require("./partitions")
 
 local Tow = {}

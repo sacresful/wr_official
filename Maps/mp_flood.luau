@@ -18,7 +18,7 @@ local AHSpatialPrefabBlueprintGuids = {
 
 function flood:OnfloodLevelDataLoad(p_floodWorldPartData: WorldPartData)
     print("***** Found floodWorldPartData Blueprint!!!") 
-    local AHSpatialPrefabBlueprint= ResourceManager:findInstance(AHSpatialPrefabBlueprintGuids.partitionGuid, jetSpatialPrefabBlueprintGuids.instanceGuid)
+    local AHSpatialPrefabBlueprint= ResourceManager:findInstance(AHSpatialPrefabBlueprintGuids.partitionGuid, AHSpatialPrefabBlueprintGuids.instanceGuid)
     local s_ReferenceObjectData16 = p_floodWorldPartData.objects[17] :: ReferenceObjectData
     s_ReferenceObjectData16.blueprint = AHSpatialPrefabBlueprint:clone()
 end

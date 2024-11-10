@@ -1,4 +1,5 @@
 --!strict
+-- fucking around with the scout
 local partitions = require("./partitions")
 
 local LB = {}
@@ -13,10 +14,10 @@ local LBVehicleBlueprint = {
 function LB:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
     print("***** Found LB Blueprint!!!") 
     local s_VehicleEntityData = p_VehicleBlueprint.object :: VehicleEntityData
-    local s_Components = s_VehicleEntityData.components :: DataContainer
+    local s_Components = s_VehicleEntityData.components 
     local s_Index = s_Components[1]
     local s_ChassisComponentData = s_Index :: ChassisComponentData
-    local s_Componentss = s_ChassisComponentData.components :: DataContainer
+    local s_Componentss = s_ChassisComponentData.components 
     local s_CompnentIndex = s_Componentss[21]
     local s_EngineComponentData = s_CompnentIndex :: EngineComponentData
     local s_PropellerEngineConfigData = s_EngineComponentData.config :: PropellerEngineConfigData

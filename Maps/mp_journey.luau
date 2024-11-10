@@ -1,4 +1,5 @@
 --!strict
+-- increase vehicle sky ceiling on golmud
 local partitions = require("./partitions")
 
 local mp_journey = {}

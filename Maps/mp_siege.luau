@@ -1,4 +1,5 @@
 --!strict
+-- spawn jet on siege
 local partitions = require("./partitions")
 
 local siege = {}
