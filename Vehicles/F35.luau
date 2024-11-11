@@ -1,4 +1,5 @@
 --!strict
+-- fucking around with f35
 local partitions = require("./partitions")
 
 local F35 = {}
@@ -13,10 +14,10 @@ local F35Blueprint = {
 function F35:OnVehicleBlueprintLoad(p_VehicleBlueprint: VehicleBlueprint)
     print("***** Found F35 Blueprint!!!")
     local s_VehicleEntityData = p_VehicleBlueprint.object :: VehicleEntityData
-    local s_Components = s_VehicleEntityData.components :: DataContainer
+    local s_Components = s_VehicleEntityData.components 
     local s_Index = s_Components[1]
     local s_ChassisComponentData = s_Index :: ChassisComponentData
-    local s_Componentss = s_ChassisComponentData.components :: DataContainer
+    local s_Componentss = s_ChassisComponentData.components 
     local s_CompnentIndex = s_Componentss[10]
     local s_EngineComponentData = s_CompnentIndex :: EngineComponentData
     local s_JetEngineConfigData = s_EngineComponentData.config :: JetEngineConfigData

@@ -33,6 +33,8 @@ function dawnbreakerVehicle:OndawnbreakerVehiclesDataLoad(p_dawnbreakerVehicles:
     print("***** Found dawnbreakerVehicles Blueprint!!!") 
     local s_ReferenceObjectData28 = p_dawnbreakerVehicles.objects[29] :: ReferenceObjectData
     local s_ReferenceObjectData29 = p_dawnbreakerVehicles.objects[30] :: ReferenceObjectData
+    --p_dawnbreakerVehicles.objects[29] = nil
+    --p_dawnbreakerVehicles.objects[30] = nil
     s_ReferenceObjectData28.excluded = true
     s_ReferenceObjectData29.excluded = true
 end
